@@ -9,15 +9,11 @@ namespace _5Garage
         public void ShowMainMeny()
         {
             Console.WriteLine("Welcome to the Garage! /n Main Menu /n Please select an option by entering a number"
-                          + "/n1. List all paked vehicles"
-                          + "/n2. List vehicle types and number of that type"
-                          + "/n3. Ad and Remove vehicles in the garage"
-                          + "/n5. Seed dummy data"
-                          + "/n5. Search for spesicic vehicle with Registration number"
-                          + "/n6. Searching for vehicles"
-                          + "/n7. Searching for vehicles"
-                          + "/n8. Searching for vehicles"
-                          + "/n0. Searching for vehicles"
+                          + "/n1. Seed dummy data"
+                          + "/n2. List all paked vehicles & types of vehicles"
+                          + "/n3. Add and Remove vehicles in the garage"
+                          + "/n4. Search for spesicic vehicle with Registration number or search by filter"
+                          + "/n0. Exit program"
                           );
 
         }
@@ -28,5 +24,6 @@ namespace _5Garage
             //Get input
             return ""; //Tas bort
         }
+        
     }
 }

@@ -7,7 +7,7 @@ namespace _5Garage
         static void Main(string[] args)
         {
             var manger = new GarageManager();
-            manager.Start();
+            manger.Start();
             
 
         }

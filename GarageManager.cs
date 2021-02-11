@@ -4,8 +4,8 @@ namespace _5Garage
 {
     internal class GarageManager
     {
-        private  GarageHandler handler;
-        private  UI ui;
+        private GarageHandler handler;
+        private UI ui;
 
         public GarageManager()
         {
@@ -20,10 +20,14 @@ namespace _5Garage
 
         private void MainProgram()
         {
+           
+
             ui.ShowMainMeny();
             var input = ui.GetInput();
             Run(input);
-
+               
+            //Application exit
+          
         }
 
         private void Run(string input)
@@ -31,26 +35,56 @@ namespace _5Garage
             switch (input)
             {
                 case "1":
+                    Seeddata();
 
+                    break;
+
+                case "2":
+                    ListVehicles();
+                    break;
+                case "3":
+
+                    break;
+
+                case "4":
+                    break;
+
+                case "0":
+                    break;
                 default:
+                    Console.WriteLine("Invalid input");
+                    
                     break;
             }
         }
 
-        private  void CreateGarage()
+        private void ListVehicles()
         {
-            //Welcome 
+            handler.GetVehicles();
+        }
+
+        private void Seeddata()
+        {
+            handler.Seed();
+        }
+
+        private void CreateGarage()
+        {
+            Console.WriteLine("Program Starts");
             //Ask for size
             //Loop until
-           if( int.TryParse(Console.ReadLine(), out int size))
+            bool ok = false;
+            do
             {
-                //Check correct value
-                handler = new GarageHandler(size);
-            }
-            else
-            {
-                
-            }
+                 Console.WriteLine("Size?");
+                if (int.TryParse(Console.ReadLine(), out int size))
+                {
+                    //Check correct value
+                    handler = new GarageHandler(size);
+                    ok = true;
+                }
+
+            } while (!ok);
         }
     }
 }
