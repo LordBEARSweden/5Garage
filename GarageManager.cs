@@ -20,14 +20,14 @@ namespace _5Garage
 
         private void MainProgram()
         {
-           
 
             ui.ShowMainMeny();
             var input = ui.GetInput();
             Run(input);
-               
+
+
             //Application exit
-          
+
         }
 
         private void Run(string input)
@@ -43,19 +43,31 @@ namespace _5Garage
                     ListVehicles();
                     break;
                 case "3":
-
+                    AddRemoveVehicles();
                     break;
 
                 case "4":
+                    SearchVehicle();
                     break;
 
                 case "0":
+
                     break;
                 default:
                     Console.WriteLine("Invalid input");
-                    
+
                     break;
             }
+        }
+
+        private void SearchVehicle()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddRemoveVehicles()
+        {
+            throw new NotImplementedException();
         }
 
         private void ListVehicles()
@@ -76,7 +88,7 @@ namespace _5Garage
             bool ok = false;
             do
             {
-                 Console.WriteLine("Size?");
+                Console.WriteLine("How big do you want the Garage?");
                 if (int.TryParse(Console.ReadLine(), out int size))
                 {
                     //Check correct value

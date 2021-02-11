@@ -8,21 +8,23 @@ namespace _5Garage
     {
         public void ShowMainMeny()
         {
-            Console.WriteLine("Welcome to the Garage! /n Main Menu /n Please select an option by entering a number"
-                          + "/n1. Seed dummy data"
-                          + "/n2. List all paked vehicles & types of vehicles"
-                          + "/n3. Add and Remove vehicles in the garage"
-                          + "/n4. Search for spesicic vehicle with Registration number or search by filter"
-                          + "/n0. Exit program"
-                          );
-
+            Console.WriteLine("Welcome to the Garage!  Main Menu ");
+            Console.WriteLine("Please select an option by entering a number");
+            Console.WriteLine("1. Seed dummy data");
+            Console.WriteLine("2. List all paked vehicles & types of vehicles");
+            Console.WriteLine("3. Add and Remove vehicles in the garage");
+            Console.WriteLine("4. Search for spesicic vehicle with Registration number or search by filter");
+            Console.WriteLine("0. Exit program");
+                         
+                    
         }
 
         //Take char string key ....
         internal string GetInput()
         {
+            
             //Get input
-            return ""; //Tas bort
+            return Console.ReadLine();  //Tas bort
         }
         
     }

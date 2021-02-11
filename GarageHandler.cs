@@ -17,7 +17,11 @@ namespace _5Garage
         internal void Seed()
         {
            // var rödafordon = garage.Where(v => v.Color == "Röd");
-            var vehicles = GetVehicles();
+            var vehicles = new List<Vehicle>
+            {
+                new Car("abc123", "black", 4, 4, "gasoline")
+
+            };
 
             foreach (var vehicle in vehicles)
             {
@@ -27,14 +31,15 @@ namespace _5Garage
 
         internal List<Vehicle> GetVehicles()
         {
-            return new List<Vehicle>
-            {
 
-                //new Car(),
-                //new Car(),
-                //new Car(),
-                //new Car(),
-            };
+            var list = new List<Vehicle>();
+
+            foreach (var v in garage)
+            {
+                list.Add(v);
+            }
+            
+            return list;
         }
 
       
