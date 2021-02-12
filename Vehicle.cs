@@ -19,5 +19,15 @@ namespace _5Garage
             NumberOfSeats = numberOfSeats;
 
         }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        public virtual string GetVehicleInfo()
+        {
+            return $"RegistrationNumber {RegistrationNumber}, Color {Color}, NumberOfWheels {NumberOfWheels}, NuberOfSeats {NumberOfSeats}";
+        }
     }
 }

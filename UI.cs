@@ -17,6 +17,7 @@ namespace _5Garage
             Console.WriteLine("0. Exit program");
         }
 
+      
         //Take char string key ....
         internal string GetInput()
         {
@@ -24,6 +25,11 @@ namespace _5Garage
             //Get input
             return Console.ReadLine();  //Tas bort
         }
-        
+
+        internal void Print<T>(T message)
+        {
+            Console.WriteLine(message);
+        }
+       
     }
 }

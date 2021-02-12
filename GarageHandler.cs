@@ -34,7 +34,8 @@ namespace _5Garage
 
         internal List<Vehicle> GetVehicles()
         {
-
+           return garage.ToList();
+            /*
             var list = new List<Vehicle>();
 
             foreach (var v in garage)
@@ -42,7 +43,7 @@ namespace _5Garage
                 list.Add(v);
             }
             
-            return list;
+            return list;*/ 
         }
 
       

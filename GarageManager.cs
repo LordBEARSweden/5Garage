@@ -20,11 +20,15 @@ namespace _5Garage
 
         private void MainProgram()
         {
+            do
+            {
+               // Console.Clear();
+               // Console.ReadLine();
+                ui.ShowMainMeny();
+                var input = ui.GetInput();
+                Run(input);
 
-            ui.ShowMainMeny();
-            var input = ui.GetInput();
-            Run(input);
-
+            } while (true);
 
             //Application exit
 
@@ -36,12 +40,12 @@ namespace _5Garage
             {
                 case "1":
                     Seeddata();
-
                     break;
 
                 case "2":
                     ListVehicles();
                     break;
+
                 case "3":
                     AddRemoveVehicles();
                     break;
@@ -51,7 +55,7 @@ namespace _5Garage
                     break;
 
                 case "0":
-
+                    Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("Invalid input");
@@ -60,19 +64,32 @@ namespace _5Garage
             }
         }
 
+
         private void SearchVehicle()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Search");
         }
 
         private void AddRemoveVehicles()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Add/Remove");
+            //Meny for add or remove
+            //If add vilket fordon osv...
+            //If remove vilket fordon...
         }
 
         private void ListVehicles()
         {
-            handler.GetVehicles();
+            foreach (var vehicle in handler.GetVehicles())
+            {
+                //$"Regnummer: {regnrummer}"
+                ui.Print(vehicle.GetVehicleInfo());
+               // ui.Print(vehicle);
+                //Anropa ui
+                //Skriv ut ALLA properties för det specifika fordonet
+               //Console.WriteLine();
+            }
+
         }
 
         private void Seeddata()

@@ -13,5 +13,10 @@ namespace _5Garage
             FuelType = fueltype;
         }
 
+        public override string GetVehicleInfo()
+        {
+            return $" Vehicle type: Car { base.GetVehicleInfo()}  {FuelType} ";
+        }
+
     } 
 }
