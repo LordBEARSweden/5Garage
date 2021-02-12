@@ -15,8 +15,6 @@ namespace _5Garage
             Console.WriteLine("3. Add and Remove vehicles in the garage");
             Console.WriteLine("4. Search for spesicic vehicle with Registration number or search by filter");
             Console.WriteLine("0. Exit program");
-                         
-                    
         }
 
         //Take char string key ....
