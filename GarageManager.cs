@@ -186,23 +186,12 @@ namespace _5Garage
             }
             if (AddOrRemove == 2)
             {
-                var input = ui.GetInput();
-                Remove(input);
-
-                void Remove(string input)
-                {
+                
                    Console.WriteLine("Enter the vehicles Registration number");
-                    if (handler.RegCheck(Console.ReadLine()))
+                    if (handler.GetByRegNO(Console.ReadLine()))
                     {
 
                     }
-
-                    if(input == Console.ReadLine())
-                    {
-                      
-                        
-                    }
-                }
             }
             else Environment.Exit(0);
         }

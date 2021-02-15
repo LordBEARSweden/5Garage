@@ -44,7 +44,7 @@ namespace _5Garage
         internal bool Remove(T vehicle)
         {
             //Add logic
-            for (int i = 0; i < vehicles.Length; i++)
+            for (int i = 0; i < vehicles.Length; i--)
             {
 
             }
