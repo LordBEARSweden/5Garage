@@ -53,8 +53,18 @@ namespace _5Garage
             garage.Park(vehicle);
         }
 
-        internal bool RegCheck(string regnr)
+        internal bool GetByRegNO(string regnr)
         {
+            var v = garage.FirstOrDefault(v => v.RegistrationNumber == regnr);
+            garage.Remove(v);
+            foreach (var vehicle in garage)
+            {
+                if (regnr == vehicle.RegistrationNumber)
+                {
+                    return false;
+                }
+
+            }
             /*Todo: 
              * iterera över alla fordon i garage
              * jämför deras .RegNr med regnr

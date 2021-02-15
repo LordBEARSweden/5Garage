@@ -40,5 +40,15 @@ namespace _5Garage
         {
             return GetEnumerator();
         }
+
+        internal bool Remove(T vehicle)
+        {
+            //Add logic
+            for (int i = 0; i < vehicles.Length; i++)
+            {
+
+            }
+            return false;
+        }
     }
 }
