@@ -27,7 +27,7 @@ namespace _5Garage
 
         public virtual string GetVehicleInfo()
         {
-            return $"RegistrationNumber {RegistrationNumber}, Color {Color}, NumberOfWheels {NumberOfWheels}, NuberOfSeats {NumberOfSeats}";
+            return $"RegistrationNumber: {RegistrationNumber}, Color: {Color}, NumberOfWheels: {NumberOfWheels}, NuberOfSeats: {NumberOfSeats}";
         }
     }
 }

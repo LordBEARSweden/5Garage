@@ -12,6 +12,9 @@ namespace _5Garage
         {
             TopSpeed = topSpeed;
         }
-
+        public override string GetVehicleInfo()
+        {
+            return $" Vehicle type: Motorcycle { base.GetVehicleInfo()} Top speed:  {TopSpeed} ";
+        }
     }
 }

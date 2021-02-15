@@ -8,6 +8,7 @@ namespace _5Garage
     {
         public void ShowMainMeny()
         {
+            
             Console.WriteLine("Welcome to the Garage!  Main Menu ");
             Console.WriteLine("Please select an option by entering a number");
             Console.WriteLine("1. Seed dummy data");
@@ -31,5 +32,9 @@ namespace _5Garage
             Console.WriteLine(message);
         }
        
+        public void AddRemoveVehicles()
+        {
+            
+        }
     }
 }

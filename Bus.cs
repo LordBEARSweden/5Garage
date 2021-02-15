@@ -12,5 +12,9 @@ namespace _5Garage
         {
             Lenght = lenght;
         }
+        public override string GetVehicleInfo()
+        {
+            return $" Vehicle type: Bus { base.GetVehicleInfo()} Lenght:  {Lenght} ";
+        }
     }
 }

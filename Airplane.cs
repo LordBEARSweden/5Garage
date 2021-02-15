@@ -12,6 +12,9 @@ namespace _5Garage
         {
             WingSpan = wingSpan;
         }
-
+        public override string GetVehicleInfo()
+        {
+            return $" Vehicle type: Airplane { base.GetVehicleInfo()} Wingspan: {WingSpan} ";
+        }
     }
 }

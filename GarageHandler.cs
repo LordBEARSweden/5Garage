@@ -8,8 +8,9 @@ namespace _5Garage
     class GarageHandler : UI
     {
         Garage<Vehicle> garage;
+        //public Garage<Vehicle> Garage { get; set; }
 
-       public GarageHandler(int size)
+        public GarageHandler(int size)
         {
             garage = new Garage<Vehicle>(size);
         }
@@ -46,6 +47,22 @@ namespace _5Garage
             return list;*/ 
         }
 
-      
+        
+        internal void Park(Vehicle vehicle)
+        {
+            garage.Park(vehicle);
+        }
+
+        internal bool RegCheck(string regnr)
+        {
+            /*Todo: 
+             * iterera över alla fordon i garage
+             * jämför deras .RegNr med regnr
+             * Om det matchar, return false
+             * annars om hela loopen genomförs: return true
+             
+             */
+            return true;
+        }
     }
 }

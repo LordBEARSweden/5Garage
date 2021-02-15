@@ -12,5 +12,9 @@ namespace _5Garage
         {
             NumberOfEngines = numberOfEngines;
         }
+        public override string GetVehicleInfo()
+        {
+            return $" Vehicle type: Boat { base.GetVehicleInfo()} Number of engines: {NumberOfEngines} ";
+        }
     }
 }

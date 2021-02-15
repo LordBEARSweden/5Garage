@@ -14,10 +14,6 @@ namespace _5Garage
             vehicles = new T[capacity];
         }
 
-
-
-
-
         public IEnumerator<T> GetEnumerator()
         {
             foreach (var vehicle in vehicles)
