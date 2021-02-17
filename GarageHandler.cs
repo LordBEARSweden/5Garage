@@ -53,26 +53,39 @@ namespace _5Garage
             garage.Park(vehicle);
         }
 
-        internal bool GetByRegNO(string regnr)
+        public bool RegCheck(string regnr)
         {
-            var v = garage.FirstOrDefault(v => v.RegistrationNumber == regnr);
-            garage.Remove(v);
             foreach (var vehicle in garage)
             {
                 if (regnr == vehicle.RegistrationNumber)
                 {
                     return false;
                 }
-
             }
-            /*Todo: 
-             * iterera över alla fordon i garage
-             * jämför deras .RegNr med regnr
-             * Om det matchar, return false
-             * annars om hela loopen genomförs: return true
-             
-             */
             return true;
         }
+
+        internal Vehicle GetByRegNO(string regnr)
+        {
+            var v = garage.FirstOrDefault(v => v.RegistrationNumber == regnr);
+            return v;
+        }
+
+        public List<Vehicle> GetByColor(string color)
+        {
+            var v = garage.Where(v => v.Color == color).ToList();
+            return v;
+        }
+
+        public void Remove(string regnr)
+        {
+            garage.Remove(regnr);
+        }
+
+
+
     }
+
+    
+          
 }

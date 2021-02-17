@@ -41,12 +41,16 @@ namespace _5Garage
             return GetEnumerator();
         }
 
-        internal bool Remove(T vehicle)
+        internal bool Remove(string regnr)
         {
             //Add logic
             for (int i = 0; i < vehicles.Length; i--)
             {
-
+                if (vehicles[i].RegistrationNumber == regnr)
+                {
+                    vehicles[i] = null;
+                    return true;
+                }
             }
             return false;
         }

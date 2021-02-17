@@ -69,6 +69,7 @@ namespace _5Garage
             Console.WriteLine("search");
         }
 
+        // Skriva om
         private void AddRemoveVehicles()
         {
             Console.WriteLine("Add or Remove vehicle?");
@@ -84,117 +85,122 @@ namespace _5Garage
                 var input = ui.GetInput();
                 Add(input);
 
-                void Add(string input)
-                {
-                    switch (input)
-                    {
-                        case "1":
-                            Console.WriteLine("Enter Registration number");
-                           string registrationNumber = Console.ReadLine();
-                            Console.WriteLine("What color is the car?");
-                            string color = Console.ReadLine();
-                            Console.WriteLine("How many seats does the car have?");
-                            int seats = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How many wheels does the car have?");
-                            int wheels = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("What fuel does the car use?");
-                            string fuelType = Console.ReadLine();
-
-                            var car = new Car(registrationNumber, color, seats, wheels, fuelType);
-                            handler.Park(car);
-                            Console.WriteLine("Vehicle is now parked in the garage");
-                            break;
-
-                        case "2":
-                            Console.WriteLine("Enter Registration number");
-                            string registrationNumber1 = Console.ReadLine();
-                            Console.WriteLine("What color is the bus?");
-                            string color1 = Console.ReadLine();
-                            Console.WriteLine("How many seats does the bus have?");
-                            int seats1 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How many wheels does the bus have?");
-                            int wheels1 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How long is the bus?");
-                            int lenght = Int32.Parse(Console.ReadLine());
-
-                            var bus = new Bus(registrationNumber1, color1, seats1, wheels1, lenght);
-                            handler.Park(bus);
-                            Console.WriteLine("Vehicle is now parked in the garage");
-                            break;
-
-                        case "3":
-                            Console.WriteLine("Enter Registration number");
-                            string registrationNumber2 = Console.ReadLine();
-                            Console.WriteLine("What color is the motorcycle?");
-                            string color2 = Console.ReadLine();
-                            Console.WriteLine("How many seats does the motorcycle have?");
-                            int seats2 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How many wheels does the wheels does the motorcycle have?");
-                            int wheels2 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("What is the top speed of the motorcycle?");
-                            int topSpeed = Int32.Parse(Console.ReadLine());
-
-                            var motorcycle = new Motorcycle(registrationNumber2, color2, seats2, wheels2, topSpeed);
-                            handler.Park(motorcycle);
-                            Console.WriteLine("Vehicle is now parked in the garage");
-                            break;
-
-                        case "4":
-                            Console.WriteLine("Enter Registration number");
-                            string registrationNumber3 = Console.ReadLine();
-                            Console.WriteLine("What color is the airplane?");
-                            string color3 = Console.ReadLine();
-                            Console.WriteLine("How many seats does the it have?");
-                            int seats3 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How many wheels do the airplane have?");
-                            int wheels3 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("What is the wingspan?");
-                            int wingSpan = Int32.Parse(Console.ReadLine());
-
-                            var airplane = new Airplane(registrationNumber3, color3, seats3, wheels3, wingSpan);
-                            handler.Park(airplane);
-                            Console.WriteLine("Vehicle is now parked in the garage");
-                            break;
-
-                        case "5":
-                            Console.WriteLine("Enter Registration number");
-                            string registrationNumber4 = Console.ReadLine();
-                            Console.WriteLine("What color is the boat?");
-                            string color4 = Console.ReadLine();
-                            Console.WriteLine("How many seats does the boat have?");
-                            int seats4 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How many wheels does the boat have?");
-                            int wheels4 = Int32.Parse(Console.ReadLine());
-                            Console.WriteLine("How long is the bus?");
-                            int numberOfEngines = Int32.Parse(Console.ReadLine());
-
-                            var boat = new Boat(registrationNumber4, color4, seats4, wheels4, numberOfEngines);
-                            handler.Park(boat);
-                            Console.WriteLine("Vehicle is now parked in the garage");
-                            break;
-
-                        case "0":
-                            Environment.Exit(0);
-                            break;
-                        default:
-                            Console.WriteLine("Invalid input");
-
-                            break;
-                    }
-                }
-
             }
             if (AddOrRemove == 2)
             {
-                
-                   Console.WriteLine("Enter the vehicles Registration number");
-                    if (handler.GetByRegNO(Console.ReadLine()))
-                    {
-
-                    }
+                // skriv om
+                Console.WriteLine("Enter the vehicles Registration number");
+                var regnr = Console.ReadLine();
+                if (handler.RegCheck(regnr))
+                {
+                   handler.Remove(regnr);
+                }
             }
-            else Environment.Exit(0);
+            //else Environment.Exit(0);
         }
+
+
+        void Add(string input)
+        {
+            switch (input)
+            {
+                case "1":
+                    Console.WriteLine("Enter Registration number");
+                    string registrationNumber = Console.ReadLine();
+                    Console.WriteLine("What color is the car?");
+                    string color = Console.ReadLine();
+                    Console.WriteLine("How many seats does the car have?");
+                    int seats = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many wheels does the car have?");
+                    int wheels = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("What fuel does the car use?");
+                    string fuelType = Console.ReadLine();
+
+                    var car = new Car(registrationNumber, color, seats, wheels, fuelType);
+                    handler.Park(car);
+                    Console.WriteLine("Vehicle is now parked in the garage");
+                    break;
+
+                case "2":
+                    Console.WriteLine("Enter Registration number");
+                    string registrationNumber1 = Console.ReadLine();
+                    Console.WriteLine("What color is the bus?");
+                    string color1 = Console.ReadLine();
+                    Console.WriteLine("How many seats does the bus have?");
+                    int seats1 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many wheels does the bus have?");
+                    int wheels1 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How long is the bus?");
+                    int lenght = Int32.Parse(Console.ReadLine());
+
+                    var bus = new Bus(registrationNumber1, color1, seats1, wheels1, lenght);
+                    handler.Park(bus);
+                    Console.WriteLine("Vehicle is now parked in the garage");
+                    break;
+
+                case "3":
+                    Console.WriteLine("Enter Registration number");
+                    string registrationNumber2 = Console.ReadLine();
+                    Console.WriteLine("What color is the motorcycle?");
+                    string color2 = Console.ReadLine();
+                    Console.WriteLine("How many seats does the motorcycle have?");
+                    int seats2 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many wheels does the wheels does the motorcycle have?");
+                    int wheels2 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("What is the top speed of the motorcycle?");
+                    int topSpeed = Int32.Parse(Console.ReadLine());
+
+                    var motorcycle = new Motorcycle(registrationNumber2, color2, seats2, wheels2, topSpeed);
+                    handler.Park(motorcycle);
+                    Console.WriteLine("Vehicle is now parked in the garage");
+                    break;
+
+                case "4":
+                    Console.WriteLine("Enter Registration number");
+                    string registrationNumber3 = Console.ReadLine();
+                    Console.WriteLine("What color is the airplane?");
+                    string color3 = Console.ReadLine();
+                    Console.WriteLine("How many seats does the it have?");
+                    int seats3 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many wheels do the airplane have?");
+                    int wheels3 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("What is the wingspan?");
+                    int wingSpan = Int32.Parse(Console.ReadLine());
+
+                    var airplane = new Airplane(registrationNumber3, color3, seats3, wheels3, wingSpan);
+                    handler.Park(airplane);
+                    Console.WriteLine("Vehicle is now parked in the garage");
+                    break;
+
+                case "5":
+                    Console.WriteLine("Enter Registration number");
+                    string registrationNumber4 = Console.ReadLine();
+                    Console.WriteLine("What color is the boat?");
+                    string color4 = Console.ReadLine();
+                    Console.WriteLine("How many seats does the boat have?");
+                    int seats4 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How many wheels does the boat have?");
+                    int wheels4 = Int32.Parse(Console.ReadLine());
+                    Console.WriteLine("How long is the bus?");
+                    int numberOfEngines = Int32.Parse(Console.ReadLine());
+
+                    var boat = new Boat(registrationNumber4, color4, seats4, wheels4, numberOfEngines);
+                    handler.Park(boat);
+                    Console.WriteLine("Vehicle is now parked in the garage");
+                    break;
+
+                case "0":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Invalid input");
+
+                    break;
+            }
+        }
+
+
+
 
         private void ListVehicles()
         {
